@@ -9,10 +9,6 @@ $app = new \Slim\App;
 //Get all Books
 $app->post('/api/books', function(Request $request, Response $response){
     
-    if ($request->getHeader('CONTENT_TYPE')[0] !== "application/json") {
-        echo "Content type of request should be 'application/json'";
-        die();
-    }
     $data = $request->getParams();
     
     try {
