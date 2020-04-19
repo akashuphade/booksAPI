@@ -73,28 +73,23 @@ $app->post('/api/books', function(Request $request, Response $response){
             }
 
             if (!empty($data['language'])) {
-                $data['language'] = filter_var_array($data['language'], FILTER_SANITIZE_STRING);
                 $arrWhere[] = " e.code in ('".implode("','", $data['language'])."')";
             }
             
             if (!empty($data['mimeType'])) {
-                $data['mimeType'] = filter_var_array($data['mimeType'], FILTER_SANITIZE_STRING);
                 $arrWhere[] = " j.mime_type in ('".implode("','", $data['mimeType'])."')";
             }
 
             if (!empty($data['topic'])) {
-                $data['topic'] = filter_var_array($data['topic'], FILTER_SANITIZE_STRING);
-                $arrWhere[] = " (g.name REGEXP '".implode("|", $data['topic'])."'". " OR i.name REGEXP '".implode("|", $data['topic'])."')";
+                $arrWhere[] = " (g.name REGEXP ".$db->quote(implode("|", $data['topic']))."". " OR i.name REGEXP ".$db->quote(implode("|", $data['topic'])).")";
             }
 
             if (!empty($data['author'])) {
-                $data['author'] = filter_var_array($data['author'], FILTER_SANITIZE_STRING);
-                $arrWhere[] = " c.name REGEXP '".implode("|", $data['author'])."'";
+                $arrWhere[] = " c.name REGEXP ".$db->quote(implode("|", $data['author']));
             }
 
             if (!empty($data['title'])) {
-                $data['title'] = filter_var_array($data['title'], FILTER_SANITIZE_STRING);
-                $arrWhere[] = " a.title REGEXP '".implode("|", $data['title'])."'";
+                $arrWhere[] = " a.title REGEXP ".$db->quote(implode("|", $data['title']));
             }
 
             if (!empty($data['start'])) {
