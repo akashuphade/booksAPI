@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b0766dbcef4dfb1a4a2012fef8611d8",
+    "content-hash": "9eb2d7a7b18ce0f47e788b18e1a46a75",
     "packages": [
         {
             "name": "nikic/fast-route",

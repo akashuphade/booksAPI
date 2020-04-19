@@ -1,6 +1,6 @@
 {
     "name":"bookAPI",
-    "description":"This is api code which will return the books from the database as per filters",
+    "description":"This is api code which will fetch all the books from the database as per filters",
     "require": {
         "slim/slim": "^3.0"
     }
