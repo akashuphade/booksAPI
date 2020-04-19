@@ -7,9 +7,9 @@
 class DB {
 
     //properties
-    private $dbHost = '192.168.1.55';
+    private $dbHost = 'localhost';
     private $dbUser = 'root';
-    private $dbPass = 'dbl0calms@eiindia';
+    private $dbPass = '';
     private $dbName = 'books';
 
     public function connect() {
