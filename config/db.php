@@ -7,10 +7,10 @@
 class DB {
 
     //properties
-    private $dbHost = 'localhost';
-    private $dbUser = 'root';
-    private $dbPass = '';
-    private $dbName = 'books';
+    private $dbHost = '192.168.56.102';
+    private $dbUser = 'deploy-et-dev';
+    private $dbPass = 'test123test';
+    private $dbName = 'gutendex';
 
     public function connect() {
         //Form connection string
